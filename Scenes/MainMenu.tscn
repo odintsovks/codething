@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b078p3ttj20qi"]
+
+[ext_resource type="Script" uid="uid://ch04276xvc05p" path="res://Scripts/StartButtonPlaceholder.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cqgkdreocsnkn" path="res://Images/Icons/icon.png" id="2"]
+
+[node name="MenuBase" type="Node2D"]
+scale = Vector2(1, 1.01267)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 364.676
+offset_top = 427.406
+offset_right = 704.676
+offset_bottom = 491.406
+texture_normal = ExtResource("2")
+script = ExtResource("1")

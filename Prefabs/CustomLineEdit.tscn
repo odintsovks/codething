@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c25ys5jx260u7"]
+
+[ext_resource type="FontFile" uid="uid://cas6d46aujtcu" path="res://Fonts/Roboto-Regular.ttf" id="2_v7s6t"]
+[ext_resource type="Script" uid="uid://gde8tjxen5w8" path="res://Scripts/CustomLineEditNode.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(436, 160)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("3")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_top = -80.0
+offset_right = 436.0
+offset_bottom = 80.0
+mouse_filter = 1
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_v7s6t")
+theme_override_font_sizes/font_size = 121
+text = "012"
+context_menu_enabled = false
+caret_blink = true
+
+[node name="Area2D" type="Area2D" parent="LineEdit"]
+position = Vector2(160, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineEdit/Area2D"]
+position = Vector2(58, 0)
+shape = SubResource("2")
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="mouse_entered" from="LineEdit/Area2D" to="LineEdit" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="LineEdit/Area2D" to="LineEdit" method="_on_Area2D_mouse_exited"]

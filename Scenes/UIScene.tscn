@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://c70xmd0pp46ww"]
+
+[ext_resource type="Script" uid="uid://c8eweymnowj36" path="res://Scripts/PreviewPanelScript.gd" id="1"]
+[ext_resource type="Script" uid="uid://cxfijoaepa863" path="res://Scripts/RubbishPanelScript.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cs5l2xgwdael8" path="res://Images/RubbishBin.png" id="3"]
+[ext_resource type="Script" uid="uid://bikydmoj4nump" path="res://Scripts/HorizontalResizer.gd" id="5"]
+[ext_resource type="Script" uid="uid://cbmayhy5ekxed" path="res://Scripts/Classes/ModSprite.gd" id="6"]
+[ext_resource type="StyleBox" path="res://Grabber.tres" id="7"]
+[ext_resource type="StyleBox" path="res://GrabberHighlight.tres" id="8"]
+[ext_resource type="StyleBox" path="res://GrabberSelected.tres" id="9"]
+
+[node name="UIScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -0.222733
+offset_top = 0.222725
+offset_right = 1023.78
+offset_bottom = 600.223
+pivot_offset = Vector2(1024, 600)
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 600.0
+
+[node name="HorizontalResizer" type="Control" parent="."]
+anchors_preset = 0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_right = 150.0
+mouse_default_cursor_shape = 10
+script = ExtResource("5")
+
+[node name="Panel" type="Panel" parent="HorizontalResizer"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PreviewPanel" type="ColorRect" parent="HorizontalResizer/Panel"]
+clip_contents = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -90.0
+color = Color(0.47451, 0.47451, 0.47451, 1)
+script = ExtResource("1")
+
+[node name="Node2D" type="Node2D" parent="HorizontalResizer/Panel/PreviewPanel"]
+
+[node name="VScrollBar" type="VScrollBar" parent="HorizontalResizer/Panel/PreviewPanel"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+theme_override_styles/grabber = ExtResource("7")
+theme_override_styles/grabber_highlight = ExtResource("8")
+theme_override_styles/grabber_pressed = ExtResource("9")
+min_value = -1.0
+max_value = 0.0
+step = -0.1
+value = -1.0
+
+[node name="RubbishPanel" type="ColorRect" parent="HorizontalResizer"]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -85.0
+offset_right = -5.0
+offset_bottom = -5.0
+color = Color(0.396078, 0.396078, 0.396078, 1)
+script = ExtResource("2")
+
+[node name="RubbishBin" type="Sprite2D" parent="HorizontalResizer/RubbishPanel"]
+position = Vector2(70, 40)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3")
+script = ExtResource("6")
+
+[connection signal="gui_input" from="HorizontalResizer" to="HorizontalResizer" method="_on_HorizontalResizer_gui_input"]
+[connection signal="gui_input" from="HorizontalResizer/Panel/PreviewPanel" to="HorizontalResizer/Panel/PreviewPanel" method="_on_PreviewPanel_gui_input"]
+[connection signal="resized" from="HorizontalResizer/Panel/PreviewPanel" to="HorizontalResizer/Panel/PreviewPanel" method="_on_PreviewPanel_resized"]
+[connection signal="gui_input" from="HorizontalResizer/Panel/PreviewPanel/VScrollBar" to="HorizontalResizer/Panel/PreviewPanel" method="_on_VScrollBar_gui_input"]
+[connection signal="value_changed" from="HorizontalResizer/Panel/PreviewPanel/VScrollBar" to="HorizontalResizer/Panel/PreviewPanel" method="_on_VScrollBar_value_changed"]
+[connection signal="gui_input" from="HorizontalResizer/RubbishPanel" to="HorizontalResizer/RubbishPanel" method="_on_RubbishPanel_gui_input"]
+[connection signal="resized" from="HorizontalResizer/RubbishPanel" to="HorizontalResizer/RubbishPanel" method="_on_RubbishPanel_resized"]

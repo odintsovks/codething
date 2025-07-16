@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1xjaw8emamna"]
+
+[ext_resource type="FontFile" uid="uid://cas6d46aujtcu" path="res://Fonts/Roboto-Regular.ttf" id="1"]
+[ext_resource type="Script" uid="uid://bpknpvlndujsv" path="res://Scripts/NodePreviewPrefabScript.gd" id="2"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/51/0/ascent = 0.0
+cache/0/51/0/descent = 0.0
+cache/0/51/0/underline_position = 0.0
+cache/0/51/0/underline_thickness = 0.0
+cache/0/51/0/scale = 1.0
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+cache/0/61/0/ascent = 0.0
+cache/0/61/0/descent = 0.0
+cache/0/61/0/underline_position = 0.0
+cache/0/61/0/underline_thickness = 0.0
+cache/0/61/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+cache/0/76/0/ascent = 0.0
+cache/0/76/0/descent = 0.0
+cache/0/76/0/underline_position = 0.0
+cache/0/76/0/underline_thickness = 0.0
+cache/0/76/0/scale = 1.0
+cache/0/86/0/ascent = 0.0
+cache/0/86/0/descent = 0.0
+cache/0/86/0/underline_position = 0.0
+cache/0/86/0/underline_thickness = 0.0
+cache/0/86/0/scale = 1.0
+cache/0/91/0/ascent = 0.0
+cache/0/91/0/descent = 0.0
+cache/0/91/0/underline_position = 0.0
+cache/0/91/0/underline_thickness = 0.0
+cache/0/91/0/scale = 1.0
+cache/0/101/0/ascent = 0.0
+cache/0/101/0/descent = 0.0
+cache/0/101/0/underline_position = 0.0
+cache/0/101/0/underline_thickness = 0.0
+cache/0/101/0/scale = 1.0
+cache/0/106/0/ascent = 0.0
+cache/0/106/0/descent = 0.0
+cache/0/106/0/underline_position = 0.0
+cache/0/106/0/underline_thickness = 0.0
+cache/0/106/0/scale = 1.0
+cache/0/111/0/ascent = 0.0
+cache/0/111/0/descent = 0.0
+cache/0/111/0/underline_position = 0.0
+cache/0/111/0/underline_thickness = 0.0
+cache/0/111/0/scale = 1.0
+cache/0/116/0/ascent = 0.0
+cache/0/116/0/descent = 0.0
+cache/0/116/0/underline_position = 0.0
+cache/0/116/0/underline_thickness = 0.0
+cache/0/116/0/scale = 1.0
+cache/0/121/0/ascent = 0.0
+cache/0/121/0/descent = 0.0
+cache/0/121/0/underline_position = 0.0
+cache/0/121/0/underline_thickness = 0.0
+cache/0/121/0/scale = 1.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -768.0
+offset_top = -768.0
+offset_right = 768.0
+offset_bottom = 768.0
+pivot_offset = Vector2(768, 768)
+color = Color(0.576471, 0.576471, 0.576471, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Panel" type="Panel" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+pivot_offset = Vector2(512, 512)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -692.0
+offset_top = 523.0
+offset_right = 692.0
+offset_bottom = 758.0
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 116
+text = "ProcessorTitle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_ColorRect_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect" to="." method="_on_ColorRect_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/Panel" to="." method="_on_Panel_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Panel" to="." method="_on_Panel_mouse_exited"]

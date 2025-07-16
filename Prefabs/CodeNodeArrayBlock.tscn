@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctjjfhecyg8rp"]
+
+[ext_resource type="Texture2D" uid="uid://cauuu3hh2aqae" path="res://Images/CodeNodeImage.png" id="1"]
+[ext_resource type="Script" uid="uid://cbmayhy5ekxed" path="res://Scripts/Classes/ModSprite.gd" id="2"]
+[ext_resource type="Script" uid="uid://c5gserf8uhwt3" path="res://Scripts/CodeNodeBlockCode.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1024, 1024)
+
+[node name="NodeBase" type="Node2D"]
+
+[node name="ModSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Area2D" type="Area2D" parent="ModSprite"]
+script = ExtResource("3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ModSprite/Area2D"]
+shape = SubResource("1")
+
+[connection signal="input_event" from="ModSprite/Area2D" to="ModSprite/Area2D" method="_on_Area2D_input_event"]

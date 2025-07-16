@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Images/CodeNodeImage.png" type="Texture2D" id=1]
+[ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MenuBase" parent="." instance=ExtResource( 2 )]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2( 1920, 1080 )
+
+[node name="Node2D" type="Node2D" parent="SubViewport"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Node2D"]
+texture = ExtResource( 1 )
+offset = Vector2( 800, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport/Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 1745.61, -736.471 )
+texture = SubResource( 1 )
